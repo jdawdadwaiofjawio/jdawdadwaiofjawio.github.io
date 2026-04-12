@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jdawdadwaiofjawio.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="当 Vibe Coding 已经足以让一个人快速做出产品原型时，一般性的写代码就不再只是复杂技术，而开始表现出更强的内容属性。产品也因此不再只是一个强调投入产出比的工程项目，而越来越像一部作品：它承载创作者对世界的解释、对问题的命名，以及对某种立场的表达。真正决定作品价值的，不再只是“能不能做出来”，而是它能否在多大程度上唤起共鸣。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码的内容化：历次生产成本崩塌会发生什么变化？">
+<meta property="og:url" content="https://jdawdadwaiofjawio.github.io/2026/04/12/code-as-content-cost-collapse/index.html">
+<meta property="og:site_name" content="42号笔记">
+<meta property="og:description" content="当 Vibe Coding 已经足以让一个人快速做出产品原型时，一般性的写代码就不再只是复杂技术，而开始表现出更强的内容属性。产品也因此不再只是一个强调投入产出比的工程项目，而越来越像一部作品：它承载创作者对世界的解释、对问题的命名，以及对某种立场的表达。真正决定作品价值的，不再只是“能不能做出来”，而是它能否在多大程度上唤起共鸣。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jdawdadwaiofjawio.github.io/images/code-as-content-value-chain.png">
+<meta property="article:published_time" content="2026-04-13T02:30:00.000Z">
+<meta property="article:modified_time" content="2026-04-12T20:29:34.780Z">
+<meta property="article:author" content="jdawdadwaiofjawio">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="Vibe Coding">
+<meta property="article:tag" content="产品方法论">
+<meta property="article:tag" content="技术史">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jdawdadwaiofjawio.github.io/images/code-as-content-value-chain.png">
+
+
+<link rel="canonical" href="https://jdawdadwaiofjawio.github.io/2026/04/12/code-as-content-cost-collapse/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://jdawdadwaiofjawio.github.io/2026/04/12/code-as-content-cost-collapse/","path":"2026/04/12/code-as-content-cost-collapse/","title":"代码的内容化：历次生产成本崩塌会发生什么变化？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>代码的内容化：历次生产成本崩塌会发生什么变化？ | 42号笔记</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">42号笔记</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录思考，分享成长</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%8A%80%E6%9C%AF%E7%9A%84%E5%87%A0%E7%A7%8D%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">一、如何理解技术的几种基本类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%88%90%E6%9C%AC%E5%B4%A9%E5%A1%8C%E4%B9%8B%E5%90%8E%EF%BC%8C%E4%B8%80%E8%88%AC%E4%BC%9A%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88"><span class="nav-number">2.</span> <span class="nav-text">二、成本崩塌之后，一般会发生什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BB%A3%E7%A0%81%E4%BC%9A%E8%B5%B0%E5%90%91%E2%80%9C%E5%86%85%E5%AE%B9%E5%8C%96%E2%80%9D"><span class="nav-number">3.</span> <span class="nav-text">三、为什么代码会走向“内容化”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E4%BB%B7%E5%80%BC%E9%93%BE%E9%87%8D%E8%BF%81%E7%A7%BB%EF%BC%9AAI-%E6%89%93%E4%BB%A3%E7%A0%81%E5%89%8D%E4%B8%8E%E5%90%8E"><span class="nav-number">4.</span> <span class="nav-text">四、价值链重迁移：AI 打代码前与后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%BD%93%E6%8A%80%E6%9C%AF-ROI-%E7%9A%84%E6%9E%B7%E9%94%81%E8%A2%AB%E6%89%93%E5%BC%80%E4%B9%8B%E5%90%8E"><span class="nav-number">5.</span> <span class="nav-text">五、当技术 ROI 的枷锁被打开之后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E6%9C%AA%E6%9D%A5%E7%AB%9E%E4%BA%89%E4%BC%9A%E8%BF%81%E7%A7%BB%E5%88%B0%E5%93%AA%E9%87%8C"><span class="nav-number">6.</span> <span class="nav-text">六、未来竞争会迁移到哪里</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E7%BB%93%E8%AF%AD%EF%BC%9A%E7%94%9F%E4%BA%A7%E6%88%90%E6%9C%AC%E5%B4%A9%E5%A1%8C%E5%90%8E%EF%BC%8C%E6%9C%80%E7%A8%80%E7%BC%BA%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">7.</span> <span class="nav-text">七、结语：生产成本崩塌后，最稀缺的是什么</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="jdawdadwaiofjawio"
+      src="/images/notebook-42.png">
+  <p class="site-author-name" itemprop="name">jdawdadwaiofjawio</p>
+  <div class="site-description" itemprop="description">42号笔记 - 记录思考，分享成长</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jdawdadwaiofjawio" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jdawdadwaiofjawio" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jdawdadwaiofjawio.github.io/2026/04/12/code-as-content-cost-collapse/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/notebook-42.png">
+      <meta itemprop="name" content="jdawdadwaiofjawio">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="42号笔记">
+      <meta itemprop="description" content="42号笔记 - 记录思考，分享成长">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="代码的内容化：历次生产成本崩塌会发生什么变化？ | 42号笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          代码的内容化：历次生产成本崩塌会发生什么变化？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-04-13 10:30:00 / 修改时间：04:29:34" itemprop="dateCreated datePublished" datetime="2026-04-13T10:30:00+08:00">2026-04-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%80%9D%E8%80%83/" itemprop="url" rel="index"><span itemprop="name">思考</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>当 <strong>Vibe Coding</strong> 已经足以让一个人快速做出产品原型时，一般性的写代码就不再只是复杂技术，而开始表现出更强的<strong>内容属性</strong>。产品也因此不再只是一个强调投入产出比的工程项目，而越来越像一部作品：它承载创作者对世界的解释、对问题的命名，以及对某种立场的表达。真正决定作品价值的，不再只是“能不能做出来”，而是它能否在多大程度上唤起共鸣。</p>
+<span id="more"></span>
+
+<p>这背后反映的是一条更普遍的规律：<strong>当一种高门槛生产能力被压价到接近空气时，世界真正改变的不是产量本身，而是价值链各环节的权重分配。竞争不会消失，它只会沿着价值链迁移到新的稀缺处。</strong></p>
+<blockquote>
+<p>成本崩塌并不会终结竞争，它只会让竞争从“生产能力”迁移到“问题定义、筛选机制、信任结构与共鸣能力”。</p>
+</blockquote>
+<p>如果要在技术史中寻找类比，代码的内容化与其说更像蒸汽机、电力、流水线这类以“做功”为核心的技术，不如说更像<strong>计算机对数学计算的替代</strong>、<strong>摄影机对写实绘画与复杂视觉记录的外部化</strong>。它们共同的特征是：对长期训练、复杂技艺和高学习成本形成了大规模替代。</p>
+<h2 id="一、如何理解技术的几种基本类型"><a href="#一、如何理解技术的几种基本类型" class="headerlink" title="一、如何理解技术的几种基本类型"></a>一、如何理解技术的几种基本类型</h2><p>如果把技术放回到整个人类生产体系中观察，可以将其大致分为五类。它们并不总是彼此独立，很多时候会交叉、叠合，甚至同时横跨多个层面，但这样的分类足以帮助我们理解生产力变化时，价值链为什么会重排。</p>
+<table>
+<thead>
+<tr>
+<th>技术类型</th>
+<th>核心作用</th>
+<th>典型例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>做功</td>
+<td>改造物质世界</td>
+<td>蒸汽机、电力、流水线</td>
+</tr>
+<tr>
+<td>运输</td>
+<td>移动物质世界中的对象</td>
+<td>汽车、铁路、飞机、集装箱</td>
+</tr>
+<tr>
+<td>信息传递</td>
+<td>记录、复制与传播信息</td>
+<td>纸、印刷术、电报、互联网</td>
+</tr>
+<tr>
+<td>认知处理</td>
+<td>处理、压缩、生成认知结果</td>
+<td>摄影、计算机、生成式技术</td>
+</tr>
+<tr>
+<td>协作</td>
+<td>组织人与人之间的共识与协作</td>
+<td>宗教、法律、区块链</td>
+</tr>
+</tbody></table>
+<p>从更抽象的层面看，这五类技术又可以进一步折叠为三种生产能力。首先是<strong>人对物质的凝结能力</strong>，它主要体现为做功与认知处理；其次是<strong>人对产出物的传递能力</strong>，主要体现为运输与信息传递；最后是<strong>人形成组织的能力</strong>，其核心则体现在协作结构上。</p>
+<p>也正因此，AI 很难被简单放在某一个单独类别中。它既具有某种“做功”属性，因为它能够直接替代一部分原本需要投入人类劳动的操作；同时它又更深刻地属于“认知处理”，因为它真正压低成本的地方，是将复杂的理解、生成、推演、表达与组合能力外部化了。在这次变化中，<strong>认知处理的意义显然更大于单纯做功。</strong></p>
+<h2 id="二、成本崩塌之后，一般会发生什么"><a href="#二、成本崩塌之后，一般会发生什么" class="headerlink" title="二、成本崩塌之后，一般会发生什么"></a>二、成本崩塌之后，一般会发生什么</h2><p>无论历史上是哪一种高门槛能力被大幅压价，后续变化通常都遵循一条非常相似的路径。真正发生变化的，不只是供给增加，而是原有价值链中“谁重要、谁不重要、谁拿走利润、谁失去位置”的结构性重排。</p>
+<p><strong>成本崩塌（边际成本骤降） → 旧价值链中的关键人失效 → 供给暴涨与同质化上升 → 筛选与信任成为新瓶颈 → 价值链重排 → 新行业标准与新职业分工形成。</strong></p>
+<p>这一过程的关键在于：当过去昂贵的生产环节突然变得廉价，社会不会因此进入没有竞争的状态，相反，竞争会更激烈，因为供给会更快地涌出。同质化越高，筛选越困难；筛选越困难，谁能建立新的信任机制、分发机制与识别机制，谁就越可能占据新的高地。</p>
+<h2 id="三、为什么代码会走向“内容化”"><a href="#三、为什么代码会走向“内容化”" class="headerlink" title="三、为什么代码会走向“内容化”"></a>三、为什么代码会走向“内容化”</h2><p>过去很长一段时间里，写代码是一种高度工程化的能力。它需要长期训练，需要复杂的技术基础，需要稳定团队协作，需要严格考虑投入产出比。因此，产品开发天然更像一个需要谨慎立项、谨慎评估、谨慎排期的工程项目。</p>
+<p>但当 Vibe Coding 让“把一个想法快速做成可交互原型”这件事变得非常容易之后，一般性的编码工作就开始发生质变。它不再稀缺，因此也不再天然拥有最高权重。开发的门槛降低后，一个产品首先变成的是表达媒介——像写作、拍摄、剪辑、设计一样，成为创作者阐释观点的方式。</p>
+<p>在这个意义上，产品越来越像一部小说，而不是一项纯工程。它可以仍然有结构、有逻辑、有实现，但它的竞争重点逐步迁移到：<strong>你究竟在表达什么，你命名了怎样的问题，你是否真的理解那群人的处境，你的作品是否足够独特，是否足够让人产生共鸣。</strong></p>
+<p>这意味着，很多原来被放在“技术研发”环节中的价值，正在向问题定义与市场冷启动迁移。技术本身并未消失，但它在价值链中的相对权重下降了。</p>
+<h2 id="四、价值链重迁移：AI-打代码前与后"><a href="#四、价值链重迁移：AI-打代码前与后" class="headerlink" title="四、价值链重迁移：AI 打代码前与后"></a>四、价值链重迁移：AI 打代码前与后</h2><p>如果把一个产品的价值链粗略拆分为四个部分，那么它至少包括：<strong>问题定义、技术研发、冷启动，以及复制扩张。</strong></p>
+<p>问题定义指的是，能否准确命名一种真实存在、但尚未被充分表达的社会处境或用户处境；技术研发指的是，能否把预期场景翻译成一个可用产品；冷启动指的是，能否找到最愿意使用的一群人，并且快速迭代出 PMF；复制扩张则意味着，如何把局部成立变成系统成立，把渠道、品牌、组织与制度拼接为完整商业模式。</p>
+<p>在代码成本显著下行之后，这四个环节的权重会出现明显变化。</p>
+<table>
+<thead>
+<tr>
+<th>价值链环节</th>
+<th align="right">AI 打代码前</th>
+<th align="right">AI 打代码后</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>问题定义</td>
+<td align="right">20%</td>
+<td align="right">30%</td>
+</tr>
+<tr>
+<td>技术研发</td>
+<td align="right">30%</td>
+<td align="right">10%</td>
+</tr>
+<tr>
+<td>冷启动</td>
+<td align="right">30%</td>
+<td align="right">40%</td>
+</tr>
+<tr>
+<td>复制扩张</td>
+<td align="right">20%</td>
+<td align="right">20%</td>
+</tr>
+</tbody></table>
+<p>下面这张图更直观地展示了这种迁移关系：</p>
+<p><img src="/images/code-as-content-value-chain.png" alt="产品价值链权重迁移图"></p>
+<p>图中的变化非常值得玩味。<strong>技术研发从 30% 下滑到 10%</strong>，并不意味着技术不再重要，而是意味着“通用研发能力”不再像过去那样稀缺。与之对应，<strong>问题定义从 20% 上升到 30%，冷启动从 30% 上升到 40%</strong>。换句话说，在技术门槛被显著压低以后，真正稀缺的东西变成了：谁更早看见真实问题，谁更能激发早期用户共鸣，谁更能在极短时间内通过反馈闭环找到产品与人群之间的强连接。</p>
+<h2 id="五、当技术-ROI-的枷锁被打开之后"><a href="#五、当技术-ROI-的枷锁被打开之后" class="headerlink" title="五、当技术 ROI 的枷锁被打开之后"></a>五、当技术 ROI 的枷锁被打开之后</h2><p>当最早期、最沉重、最不可逆的技术研发成本被剥离后，整个产品思维都会被重新解放。过去我们讨论一个产品，习惯先问它值不值得做，因为做出来本身就很贵；而现在，一个产品原型往往可以在极低成本下生成，于是最重要的问题不再只是“值不值得做”，而是：<strong>它到底在回答什么问题，它在替谁说话，它能否形成明确且差异化的价值主张。</strong></p>
+<p>这会带来一种很深刻的变化：产品从“工程组织项目”逐渐转向“创作者—作品关系”。创作者不再只是组织资源的人，更像是观点的提出者、问题的命名者、叙事的组织者与共鸣的激发者。产品也因此更像一种持续更新的内容形态。</p>
+<p>在这样的环境下，技术 ROI 虽然没有消失，但已经不再是唯一的第一性约束。真正重要的是：你是否有能力在大量同质化供给里，提出一个<strong>足够深、足够准、足够差异化</strong>的问题定义；以及你是否有能力让这个定义通过产品的形态，被一群人真实感知并接受。</p>
+<h2 id="六、未来竞争会迁移到哪里"><a href="#六、未来竞争会迁移到哪里" class="headerlink" title="六、未来竞争会迁移到哪里"></a>六、未来竞争会迁移到哪里</h2><p>如果把这一轮变化理解清楚，就会发现“代码的内容化”并不只是程序员工作方式的变化，而是整个产品世界竞争重心的迁移。</p>
+<p>首先，竞争会越来越集中在<strong>问题命名能力</strong>上。能说清楚“问题是什么”的人，会比单纯“把功能做出来”的人更稀缺。其次，竞争会越来越集中在<strong>分发与冷启动能力</strong>上。因为当人人都能做出产品，真正难的是让一群人愿意持续使用它、讨论它、传播它。再次，竞争会向<strong>信任与筛选结构</strong>迁移。供给爆炸后，用户没有足够注意力逐一判断所有作品，于是新的信誉系统、内容筛选系统、推荐机制与品牌机制会承担更高权重。</p>
+<p>最后，竞争会迁移到<strong>创作者的世界观与表达强度</strong>上。因为当“生产”不再稀缺时，真正稀缺的是有辨识度的观点、有感受力的问题定义，以及有能力把这些内容变成作品的人。</p>
+<h2 id="七、结语：生产成本崩塌后，最稀缺的是什么"><a href="#七、结语：生产成本崩塌后，最稀缺的是什么" class="headerlink" title="七、结语：生产成本崩塌后，最稀缺的是什么"></a>七、结语：生产成本崩塌后，最稀缺的是什么</h2><p>历次生产成本崩塌，表面看都是产量爆发，深层看其实都是<strong>稀缺性的再分配</strong>。蒸汽机让体力不再稀缺，印刷术让复制不再稀缺，摄影让写实记录不再稀缺，计算机让大量规则计算不再稀缺，而生成式 AI 正在让相当一部分通用认知处理能力不再稀缺。</p>
+<p>因此，真正应该问的问题从来不是“AI 会不会让代码失去价值”，而是：<strong>当代码不再稀缺之后，新的价值会停留在哪里？</strong></p>
+<p>答案是，它不会消失，而会迁移到新的瓶颈之中：迁移到问题定义，迁移到冷启动，迁移到信任与筛选，迁移到共鸣，迁移到创作者本人的判断力、感受力和表达能力中。</p>
+<p>也正因为如此，未来最强的产品，不一定来自最重的工程组织，而更可能来自那些能够把一个模糊但真实的时代感受，迅速写成产品、做成作品，并被一群人认出来的人。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/AI/" rel="tag"># AI</a>
+              <a href="/tags/Vibe-Coding/" rel="tag"># Vibe Coding</a>
+              <a href="/tags/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95%E8%AE%BA/" rel="tag"># 产品方法论</a>
+              <a href="/tags/%E6%8A%80%E6%9C%AF%E5%8F%B2/" rel="tag"># 技术史</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/04/10/how-to-collaborate-with-ai/" rel="prev" title="应该如何与 AI 协作？先做再想的时代法则">
+                  <i class="fa fa-angle-left"></i> 应该如何与 AI 协作？先做再想的时代法则
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">jdawdadwaiofjawio</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
