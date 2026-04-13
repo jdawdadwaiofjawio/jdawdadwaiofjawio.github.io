@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jdawdadwaiofjawio.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="如果把这一轮 AI 应用的发展放在一个更长的时间轴里看，它并不是简单地从“聊天机器人”一路增强为“更强的聊天机器人”，而是在一步步穿过四个不同阶段：Chat、Action、Harness 与 Avatar。这四个阶段对应的，不只是能力多少的差别，更是产品形态、权限结构、可靠性要求以及用户关系的变化。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI应用：发展的四个阶段、通用结构以及壁垒来源">
+<meta property="og:url" content="https://jdawdadwaiofjawio.github.io/2026/04/13/ai-app-stages-structure-moats/index.html">
+<meta property="og:site_name" content="42号笔记">
+<meta property="og:description" content="如果把这一轮 AI 应用的发展放在一个更长的时间轴里看，它并不是简单地从“聊天机器人”一路增强为“更强的聊天机器人”，而是在一步步穿过四个不同阶段：Chat、Action、Harness 与 Avatar。这四个阶段对应的，不只是能力多少的差别，更是产品形态、权限结构、可靠性要求以及用户关系的变化。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jdawdadwaiofjawio.github.io/images/ai-app-stages-diagram.png">
+<meta property="article:published_time" content="2026-04-13T08:45:00.000Z">
+<meta property="article:modified_time" content="2026-04-13T04:10:48.540Z">
+<meta property="article:author" content="jdawdadwaiofjawio">
+<meta property="article:tag" content="AI应用">
+<meta property="article:tag" content="Agent">
+<meta property="article:tag" content="Avatar">
+<meta property="article:tag" content="产品方法论">
+<meta property="article:tag" content="智能体">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jdawdadwaiofjawio.github.io/images/ai-app-stages-diagram.png">
+
+
+<link rel="canonical" href="https://jdawdadwaiofjawio.github.io/2026/04/13/ai-app-stages-structure-moats/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://jdawdadwaiofjawio.github.io/2026/04/13/ai-app-stages-structure-moats/","path":"2026/04/13/ai-app-stages-structure-moats/","title":"AI应用：发展的四个阶段、通用结构以及壁垒来源"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>AI应用：发展的四个阶段、通用结构以及壁垒来源 | 42号笔记</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">42号笔记</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录思考，分享成长</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81AI-%E5%BA%94%E7%94%A8%E5%8F%91%E5%B1%95%E7%9A%84%E5%9B%9B%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="nav-number">1.</span> <span class="nav-text">一、AI 应用发展的四个阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%88%91%E4%BB%AC%E7%8E%B0%E5%9C%A8%E5%A4%A7%E8%87%B4%E5%A4%84%E4%BA%8E%E5%93%AA%E9%87%8C"><span class="nav-number">2.</span> <span class="nav-text">二、我们现在大致处于哪里</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81AI-%E5%BA%94%E7%94%A8%E7%9A%84%E9%80%9A%E7%94%A8%E7%BB%93%E6%9E%84"><span class="nav-number">3.</span> <span class="nav-text">三、AI 应用的通用结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4-Agent-%E7%9A%84%E6%9C%AC%E8%B4%A8%E6%98%AF%E2%80%9C%E5%AD%90%E9%A2%86%E5%9F%9F%E7%9A%84%E5%9B%BE%E7%81%B5%E5%AE%8C%E5%A4%87%E2%80%9D"><span class="nav-number">4.</span> <span class="nav-text">四、为什么说 Agent 的本质是“子领域的图灵完备”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81AI-%E5%BA%94%E7%94%A8%E7%9A%84%E5%A3%81%E5%9E%92%EF%BC%8C%E6%9D%A5%E8%87%AA%E4%B8%8E%E6%99%BA%E8%83%BD%E4%BA%A7%E7%94%9F%E2%80%9C%E5%A4%B9%E8%A7%92%E2%80%9D"><span class="nav-number">5.</span> <span class="nav-text">五、AI 应用的壁垒，来自与智能产生“夹角”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E4%B8%89%E7%A7%8D%E6%9B%B4%E6%B7%B1%E7%9A%84%E5%A3%81%E5%9E%92%E6%9D%A5%E6%BA%90"><span class="nav-number">6.</span> <span class="nav-text">六、三种更深的壁垒来源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E4%BB%8E%E6%A8%AA%E5%90%91-Agent-%E5%88%B0-Avatar%EF%BC%8C%E4%BC%9A%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88%E8%BF%81%E7%A7%BB"><span class="nav-number">7.</span> <span class="nav-text">七、从横向 Agent 到 Avatar，会发生什么迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E7%BB%93%E8%AF%AD%EF%BC%9A%E7%9C%9F%E6%AD%A3%E7%9A%84%E7%AB%9E%E4%BA%89%EF%BC%8C%E4%B8%8D%E5%9C%A8%E5%9B%9E%E7%AD%94%EF%BC%8C%E8%80%8C%E5%9C%A8%E6%89%BF%E6%8E%A5"><span class="nav-number">8.</span> <span class="nav-text">八、结语：真正的竞争，不在回答，而在承接</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="jdawdadwaiofjawio"
+      src="/images/notebook-42.png">
+  <p class="site-author-name" itemprop="name">jdawdadwaiofjawio</p>
+  <div class="site-description" itemprop="description">42号笔记 - 记录思考，分享成长</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jdawdadwaiofjawio" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jdawdadwaiofjawio" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jdawdadwaiofjawio.github.io/2026/04/13/ai-app-stages-structure-moats/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/notebook-42.png">
+      <meta itemprop="name" content="jdawdadwaiofjawio">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="42号笔记">
+      <meta itemprop="description" content="42号笔记 - 记录思考，分享成长">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="AI应用：发展的四个阶段、通用结构以及壁垒来源 | 42号笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AI应用：发展的四个阶段、通用结构以及壁垒来源
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-04-13 16:45:00 / 修改时间：12:10:48" itemprop="dateCreated datePublished" datetime="2026-04-13T16:45:00+08:00">2026-04-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%80%9D%E8%80%83/" itemprop="url" rel="index"><span itemprop="name">思考</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>如果把这一轮 AI 应用的发展放在一个更长的时间轴里看，它并不是简单地从“聊天机器人”一路增强为“更强的聊天机器人”，而是在一步步穿过四个不同阶段：<strong>Chat、Action、Harness 与 Avatar</strong>。这四个阶段对应的，不只是能力多少的差别，更是产品形态、权限结构、可靠性要求以及用户关系的变化。</p>
+<span id="more"></span>
+
+<p>在这个意义上，AI 应用的核心问题也不再只是“模型够不够聪明”，而是：<strong>它是否拥有一个足够完备的行动环境，是否能够稳定地调用工具、管理权限、积累记忆，并在特定场景中持续完成任务。</strong> 当这些能力逐步成熟之后，AI 应用才会真正从一个会说话的界面，变成一个能够代替用户完成复杂行动的系统。</p>
+<blockquote>
+<p>AI 应用的演化，本质上是从“输出答案”走向“完成任务”，再从“完成任务”走向“长期代表用户行动”。</p>
+</blockquote>
+<h2 id="一、AI-应用发展的四个阶段"><a href="#一、AI-应用发展的四个阶段" class="headerlink" title="一、AI 应用发展的四个阶段"></a>一、AI 应用发展的四个阶段</h2><p>从产品形态上看，AI 应用至少经历四个逐步升级的阶段。它们并不是彼此割裂的，而更像是在前一层能力之上不断叠加新的结构。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>核心能力</th>
+<th>典型表现</th>
+<th>主要限制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Chat</td>
+<td>对话与文本生成</td>
+<td>聊天框、问答、内容生成</td>
+<td>只能给建议，不能直接行动</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>调用工具并输出结果</td>
+<td>生成 PPT、图片、表格，调用 IDE 或外部工具</td>
+<td>能动，但还不够稳定，也缺少完整权限体系</td>
+</tr>
+<tr>
+<td>Harness</td>
+<td>在受控环境中可靠行动</td>
+<td>云端执行、容器化任务、权限管理、循环执行</td>
+<td>已经接近可用代理，但仍缺少深度个体化拟合</td>
+</tr>
+<tr>
+<td>Avatar</td>
+<td>与用户长期绑定的半分身代理</td>
+<td>代表用户完成跨场景任务，沉淀经验与偏好</td>
+<td>对安全、授权、记忆和生态整合要求极高</td>
+</tr>
+</tbody></table>
+<p>最开始的 <strong>Chat</strong> 阶段，本质上仍然是一个“输入问题，输出答案”的产品。它解决的是表达能力问题，而不是行动问题。到了 <strong>Action</strong> 阶段，AI 已经不再只吐出文本，而开始能输出图片、PPT、表格，甚至在 IDE 或工具环境中执行具体操作。也正是在这一阶段，大家开始真正意识到：AI 不只是一个生成器，它还可能成为执行者。</p>
+<p>但 <strong>Action</strong> 阶段仍然有一个明显问题，那就是它虽然“会动”，却未必“可靠地动”。工具调用的成功率、权限边界、错误恢复、状态追踪以及多步任务中的上下文保持，都仍然是脆弱的。因此，产品会进一步走向 <strong>Harness</strong> 阶段。所谓 Harness，可以理解为把模型放进一个被设计过、受约束、可回溯、可授权的行动环境里，让它不仅能行动，而且能相对稳定地行动。</p>
+<p>到了最后一步，也就是 <strong>Avatar</strong>，AI 才真正开始接近“半个分身”的形态。它不只是一个工具调度器，而是能够与用户长期绑定，理解用户偏好、沉淀用户经验、处理用户授权，并在多个场景中持续代表用户执行事务的代理。Avatar 的难度远远高于前面三个阶段，因为它要求产品不仅有模型能力和工具能力，还必须具备强权限、强记忆、强拟合与强安全。</p>
+<p><img src="/images/ai-app-stages-diagram.png" alt="AI应用四阶段演进图"></p>
+<h2 id="二、我们现在大致处于哪里"><a href="#二、我们现在大致处于哪里" class="headerlink" title="二、我们现在大致处于哪里"></a>二、我们现在大致处于哪里</h2><p>如果把当前市面上的 AI 应用放进这个框架里观察，会发现大多数产品已经越过了纯 Chat 阶段，进入了 <strong>Action</strong> 与 <strong>Harness</strong> 之间，少数头部产品已经在往 Harness 的中后段推进。</p>
+<p>之所以这样判断，是因为如今的 AI 应用已经具备几个明显特征。第一，它们开始拥有更多工具，能够读取文件、执行命令、操作网页、生成不同类型的产物。第二，它们开始具备初步的权限控制能力，不再是无边界地调用所有资源。第三，它们开始强调任务链路的稳定性，而不是单次回答的惊艳感。换句话说，产品竞争的重点正在从“模型说得像不像人”，转向“系统能不能真正把事做完”。</p>
+<p>但距离 Avatar 还有一段距离。原因并不在于模型本身不会说，而在于 Avatar 需要与<strong>具体用户</strong>形成长期拟合关系。它必须理解这个人的偏好、边界、工作流、风险容忍度与历史决策方式，还要在足够大的授权前提下保持安全可靠。也就是说，Avatar 难的不是再加几个工具，而是建立一种可以长期承接用户行为的信任结构。</p>
+<h2 id="三、AI-应用的通用结构"><a href="#三、AI-应用的通用结构" class="headerlink" title="三、AI 应用的通用结构"></a>三、AI 应用的通用结构</h2><p>如果从产品结构而不是表面功能来观察，许多有代表性的 Agent 产品其实都共享一套相似骨架。它们的本质，并不是简单把大模型接到几个插件上，而是试图在某个垂直场景中，为模型准备一套相对<strong>任务完备</strong>的行动环境。</p>
+<p>这意味着，大模型主要负责“思考”和“决策”，而它所需要的工具、权限、记忆、状态和执行链路，则被安放在一个可控的系统之中。对于旅游产品来说，这套环境可能是机票、酒店、行程、支付与客服系统；对于代码产品来说，这套环境则可能是终端、仓库、容器、IDE、部署与权限系统。不同场景的表象不同，但底层结构具有高度相似性。</p>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>核心作用</th>
+<th>具体说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>意图解析</td>
+<td>理解用户到底想完成什么</td>
+<td>把自然语言目标转成系统可执行目标</td>
+</tr>
+<tr>
+<td>消息规范化</td>
+<td>统一输入与状态格式</td>
+<td>对多轮消息、文件、工具结果进行结构化处理</td>
+</tr>
+<tr>
+<td>上下文管理</td>
+<td>维持任务连续性</td>
+<td>控制哪些信息进入当前推理窗口</td>
+</tr>
+<tr>
+<td>权限校验</td>
+<td>管理可执行边界</td>
+<td>决定哪些工具能调用，哪些操作要确认</td>
+</tr>
+<tr>
+<td>工具控制</td>
+<td>让模型具备行动能力</td>
+<td>通过浏览器、终端、API、文档系统等完成具体任务</td>
+</tr>
+<tr>
+<td>会话持久化与记忆</td>
+<td>让系统产生经验累积</td>
+<td>保存历史偏好、任务结果、用户信息与长期上下文</td>
+</tr>
+<tr>
+<td>循环执行</td>
+<td>持续推进任务完成</td>
+<td>在“思考—行动—观察—修正”的闭环中完成任务</td>
+</tr>
+</tbody></table>
+<p>因此，Agent 应用的关键并不只是模型智力，而是这一整套结构是否足够完整。一个非常初级的 Agent，也许只需要工具与短期记忆，就能解决简单任务；但一个复杂的 Agent 产品，则必须在权限、状态、持久化、恢复机制与任务编排层面都达到较高成熟度。没有这些结构，所谓“Agent”往往只是一层薄薄的工具封装。</p>
+<h2 id="四、为什么说-Agent-的本质是“子领域的图灵完备”"><a href="#四、为什么说-Agent-的本质是“子领域的图灵完备”" class="headerlink" title="四、为什么说 Agent 的本质是“子领域的图灵完备”"></a>四、为什么说 Agent 的本质是“子领域的图灵完备”</h2><p>可以把一个成熟的 AI 应用理解为：<strong>在某个垂直领域里，为模型准备出一套足以完成任务闭环的运行世界。</strong> 只要这个世界中的关键动作都已经被映射为可调用的能力，模型就不再需要亲自拥有这些技能，而只需要决定何时调用、如何组合以及如何纠错。</p>
+<p>这也是为什么真正有价值的 Agent，不只是把模型接口接出来，而是要围绕某个具体场景去搭建任务完备的环境。环境越完备，模型越能发挥；环境越贫弱，模型再聪明也只能停留在建议层。换句话说，<strong>模型决定上限，环境决定落地。</strong></p>
+<p>从这个角度看，很多所谓 AI 应用的竞争，其实不是在拼谁调用了更强的模型，而是在拼谁先为模型搭好了一个“在该场景里足够可行动”的世界。这个世界既包括工具本身，也包括权限结构、状态同步、错误恢复与协作规则。</p>
+<h2 id="五、AI-应用的壁垒，来自与智能产生“夹角”"><a href="#五、AI-应用的壁垒，来自与智能产生“夹角”" class="headerlink" title="五、AI 应用的壁垒，来自与智能产生“夹角”"></a>五、AI 应用的壁垒，来自与智能产生“夹角”</h2><p>如果要把 Agent 应用的壁垒来源压缩成一句话，那就是：<strong>它必须与大模型的通用智能形成夹角，而且这个夹角越大，壁垒越深。</strong></p>
+<p>这里所谓的“夹角”，指的是那些不会被模型通用能力轻易覆盖掉的部分。如果一个产品只是给模型套了更多通用工具，那么当基础模型本身越来越强时，这种优势就很容易被抹平。短期内它可能跑得更快，但长期来看，它未必能在所有领域持续领先。</p>
+<p>这也是为什么很多产品虽然今天表现突出，但仍然更像<strong>横向产品</strong>。它们做的是通用行动环境、通用工具调度、通用权限控制与通用执行框架。这当然很重要，但它们与模型能力之间仍然存在较高重合，因而壁垒未必足够深。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>特征</th>
+<th>优势</th>
+<th>局限</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>横向项目</td>
+<td>提供通用工具、通用行动环境、通用权限与执行框架</td>
+<td>起量快、适用范围广、可作为基础设施层</td>
+<td>容易被更强模型或更大平台逐步覆盖</td>
+</tr>
+<tr>
+<td>垂向项目</td>
+<td>深耕单一场景，构建行业专属环境、数据与流程</td>
+<td>与场景深度绑定，形成更强生态排他性</td>
+<td>扩张速度较慢，前期建设成本更高</td>
+</tr>
+</tbody></table>
+<p>也正因为如此，真正长期稳固的壁垒，往往不来自“模型多强”，而来自那些模型本身难以直接吞掉的东西：生态、权限、数据、拟合关系、行业流程以及用户长期沉淀下来的信任。</p>
+<h2 id="六、三种更深的壁垒来源"><a href="#六、三种更深的壁垒来源" class="headerlink" title="六、三种更深的壁垒来源"></a>六、三种更深的壁垒来源</h2><p>如果继续往下拆，AI 应用未来更深的壁垒，大体会落在三个方向上。</p>
+<p>第一种壁垒，是<strong>行动环境本身的打造难度与生态排他性</strong>。如果 AI 要运行在微信生态里，它就必须进入微信；如果 AI 要运行在电商环境中，它就必须接入商品、仓储、物流、履约与售后体系；如果 AI 要跑在旅游场景里，它就必须接通航旅、酒店、路线、签证、客服和支付。很多时候，真正难的不是模型理解能力，而是进入场景、打通生态、获得授权与建立规则。</p>
+<p>第二种壁垒，是 <strong>Avatar 与用户之间的拟合性</strong>。当 AI 在长期使用中逐步理解一个人的偏好、审美、表达方式、风险偏好、行为习惯与工作流时，它就开始形成一种个人化资产。这种资产不是一般意义上的数据库，而是用户与代理之间的长期协作历史。谁能更好地积累这种拟合关系，谁就更接近 Avatar 阶段。</p>
+<p>第三种壁垒，是<strong>代码内容化之后带来的长尾性</strong>。当代码生产成本大幅下降，产品会越来越像内容作品一样出现长尾分化。很多 AI 产品不会再追求成为单一的大众工具，而会像小说、影片、播客、游戏那样，在某个小人群中形成非常强的口味契合。大众产品可以覆盖广度，但无法完全替代这些在风格、质感、世界观与问题命名上高度贴合小众需求的作品。</p>
+<table>
+<thead>
+<tr>
+<th>壁垒来源</th>
+<th>本质</th>
+<th>为什么难以被通用智能吞没</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>生态与行动环境</td>
+<td>场景接入、资源整合、规则建立</td>
+<td>需要长期建设，具有强排他性与高协作成本</td>
+</tr>
+<tr>
+<td>用户拟合与 Avatar 记忆</td>
+<td>与具体用户形成长期协作关系</td>
+<td>属于个体化沉淀，难以被一次性复制</td>
+</tr>
+<tr>
+<td>内容化后的长尾产品</td>
+<td>面向特定审美与问题定义的小众产品</td>
+<td>依赖风格、共鸣与口味，不是纯功能替代关系</td>
+</tr>
+</tbody></table>
+<h2 id="七、从横向-Agent-到-Avatar，会发生什么迁移"><a href="#七、从横向-Agent-到-Avatar，会发生什么迁移" class="headerlink" title="七、从横向 Agent 到 Avatar，会发生什么迁移"></a>七、从横向 Agent 到 Avatar，会发生什么迁移</h2><p>如果沿着这一逻辑继续往前推，未来 AI 应用的竞争重点很可能会发生一次明显迁移：从“谁拥有更多通用工具”，迁移到“谁更深入某个垂直世界”，再迁移到“谁与具体用户建立了更深的长期关系”。</p>
+<p>在前一个阶段，产品会强调能力覆盖面，因为需要证明 AI 的确能做事；但在后一个阶段，覆盖面反而不再是唯一优势。更重要的是，这个系统是否能在某个场景里真正稳定工作，是否能承接用户的长期习惯，是否能在高授权前提下依然保持可信。到了那个时候，AI 应用就不再像一个单纯的软件入口，而更像一个附着在用户身上的操作系统级代理。</p>
+<p>这也意味着，Avatar 并不是简单意义上的“更高级的聊天机器人”，而是一种新的软件关系。它既是工具，又像助手；既需要通用智能，又必须深度个体化；既要会做事，又要知道<strong>对谁做、做到什么边界、以什么风格做</strong>。</p>
+<h2 id="八、结语：真正的竞争，不在回答，而在承接"><a href="#八、结语：真正的竞争，不在回答，而在承接" class="headerlink" title="八、结语：真正的竞争，不在回答，而在承接"></a>八、结语：真正的竞争，不在回答，而在承接</h2><p>回过头看，AI 应用从 Chat 走到 Avatar，表面上像是产品功能不断丰富，实质上却是在一步步增强系统对现实任务的承接能力。最开始，AI 只能回答；后来，AI 开始行动；再后来，AI 不只是行动，而是能在权限约束中稳定行动；最后，它才有机会成为真正理解并代表用户的半分身代理。</p>
+<p>因此，未来 AI 应用最重要的竞争，并不只是谁生成得更像人，而是谁能在某个场景中建立一个更完备、更可靠、更有记忆、也更值得信任的行动世界。谁能做到这一点，谁就更有可能从一个功能产品，走向真正的 Avatar。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/AI%E5%BA%94%E7%94%A8/" rel="tag"># AI应用</a>
+              <a href="/tags/Agent/" rel="tag"># Agent</a>
+              <a href="/tags/Avatar/" rel="tag"># Avatar</a>
+              <a href="/tags/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95%E8%AE%BA/" rel="tag"># 产品方法论</a>
+              <a href="/tags/%E6%99%BA%E8%83%BD%E4%BD%93/" rel="tag"># 智能体</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/04/12/code-as-content-cost-collapse/" rel="prev" title="代码的内容化：历次生产成本崩塌会发生什么变化？">
+                  <i class="fa fa-angle-left"></i> 代码的内容化：历次生产成本崩塌会发生什么变化？
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">jdawdadwaiofjawio</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
